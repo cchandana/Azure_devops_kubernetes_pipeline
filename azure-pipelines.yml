@@ -13,26 +13,26 @@ stages:
 - stage: Build
   jobs:
   - job: Job1
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
+    steps:
+    - bash: echo Hello, world!
   - job: Job2
 - stage: QAStage
   jobs:
   - job: Job1ofQAStage
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+    steps:
+    - bash: echo Hello, world!
   - job: Job2ofQAStage
 - stage: TestStage
   jobs:
-  - job: Job1ofTeststage
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+  - job:  
+    steps:
+    - bash: echo Hello, world!
   - job: Job2ofTestStage
 - stage: ProdStage
   jobs:
   - job: Job1ofProdStage
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+    steps:
+       - bash: echo Hello, world!
   - job: Job2ofProdStage
  
 
